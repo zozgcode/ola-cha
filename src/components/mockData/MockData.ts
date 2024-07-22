@@ -167,7 +167,7 @@ export const mockAccounts: Account[] = [
     holder: {
       firstName: "Dr James Allen, Jr (DDS dentistry",
       lastName: "",
-      nickName: "willz",
+      nickName: "Dr.",
       email: "d*@gmail.com",
       jointNames: "",
       username: "HensonA101",
