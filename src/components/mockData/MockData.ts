@@ -17,6 +17,7 @@ export const mockAccounts: Account[] = [
     bank_details: {
       account_type: "Checking",
       balance_usd: 115678.0,
+      current_balance_usd: 0.0,
     },
     transaction_mgs_code: {
       transaction_text_msg: "To continue this transaction, Please enter the code sent to you",
@@ -176,6 +177,7 @@ export const mockAccounts: Account[] = [
     bank_details: {
       account_type: "Checking",
       balance_usd: 150000.0,
+      current_balance_usd: 0.0,
     },
     transaction_mgs_code: {
       transaction_text_msg: "To continue this transaction, Please enter the code sent to you",
@@ -189,6 +191,39 @@ export const mockAccounts: Account[] = [
         description: "Transfer from J. David Thompson Estate",
         status: "Success",
         amount_usd: 150000.0,
+        account_no: "****5009",
+      },
+    ],
+  },
+  {
+    account_id: "ACC003",
+    account_type: "current",
+    holder: {
+      firstName: "Bryant Campbell",
+      lastName: "",
+      nickName: "",
+      email: "b*@gmail.com",
+      jointNames: "",
+      username: "Bryant01",
+      password: "Onelove",
+    },
+    bank_details: {
+      account_type: "Checking",
+      balance_usd: 35000.0,
+      current_balance_usd: 25000.0,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg: "To continue this transaction, Please enter the code sent to you",
+      transaction_code: "",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        transaction_id: "TXN001",
+        dateTime: "July 31 2024, 12:03:06 pm",
+        description: "Deposit from Kelvin Mills",
+        status: "Pending",
+        amount_usd: 25000.0,
         account_no: "****5009",
       },
     ],

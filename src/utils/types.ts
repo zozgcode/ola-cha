@@ -1,6 +1,7 @@
 // src/utils/types.ts
 export interface Account {
   account_id: string;
+  account_type?: string;
   holder: {
     firstName?: string;
     lastName?: string;
@@ -20,6 +21,7 @@ export interface Account {
     swift_code?: string;
     account_type: string;
     balance_usd: number;
+    current_balance_usd: number;
   };
   transaction_mgs_code: {
     transaction_text_msg?: string;
