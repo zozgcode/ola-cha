@@ -199,10 +199,10 @@ export const mockAccounts: Account[] = [
     account_id: "ACC003",
     account_type: "current",
     holder: {
-      firstName: "Bryant Campbell",
+      firstName: "Maria Peoples",
       lastName: "",
       nickName: "",
-      email: "b*@gmail.com",
+      email: "m*@gmail.com",
       jointNames: "",
       username: "Bryant01",
       password: "Onelove",
