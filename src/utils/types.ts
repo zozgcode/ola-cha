@@ -5,7 +5,7 @@ export interface Account {
   holder: {
     firstName?: string;
     lastName?: string;
-    mobileNumber?: string;
+    phoneNumber?: string;
     nickName?: string;
     gender?: string;
     email?: string;
@@ -26,6 +26,7 @@ export interface Account {
   transaction_mgs_code: {
     transaction_text_msg?: string;
     transaction_code?: string;
+    lastStepText?: string;
     wireDate: boolean;
   };
   transaction_history: Transaction[];
