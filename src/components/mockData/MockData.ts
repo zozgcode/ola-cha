@@ -430,7 +430,7 @@ export const mockAccounts: Account[] = [
         dateTime: "July 20, 2019",
         description: "Chase Credit Card Bill",
         status: "Success",
-        amount_usd: -1900.0,
+        amount_usd: -350000.0,
         account_no: "****5007",
       },
       {
