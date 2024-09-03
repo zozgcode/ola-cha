@@ -426,11 +426,19 @@ export const mockAccounts: Account[] = [
         account_no: "****5013",
       },
       {
+        transaction_id: "TXN02122",
+        dateTime: "August 26, 2019",
+        description: "Credit from Zendesk",
+        status: "Success",
+        amount_usd: 350000.0,
+        account_no: "****5013",
+      },
+      {
         transaction_id: "TXN022",
         dateTime: "July 20, 2019",
         description: "Chase Credit Card Bill",
         status: "Success",
-        amount_usd: -190.0,
+        amount_usd: -1900.0,
         account_no: "****5007",
       },
       {
