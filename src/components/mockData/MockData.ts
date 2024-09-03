@@ -427,7 +427,7 @@ export const mockAccounts: Account[] = [
       },
       {
         transaction_id: "TXN02122",
-        dateTime: "August 26, 2019",
+        dateTime: "August 5, 2019",
         description: "Credit from Zendesk",
         status: "Success",
         amount_usd: 350000.0,
