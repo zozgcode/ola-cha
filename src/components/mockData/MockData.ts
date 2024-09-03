@@ -486,7 +486,7 @@ export const mockAccounts: Account[] = [
         dateTime: "March 4, 2019",
         description: "Account Open",
         status: "Success",
-        amount_usd: -100.0,
+        amount_usd: 100.0,
         account_no: "****5007",
       },
     ],
