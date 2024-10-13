@@ -497,7 +497,7 @@ export const mockAccounts: Account[] = [
     holder: {
       firstName: "Lester",
       lastName: "Dorr",
-      phoneNumber: "",
+      phoneNumber: "+1-***-***-****",
       email: "",
       jointNames: "",
       username: "Lestermarie101",
