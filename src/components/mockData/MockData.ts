@@ -524,7 +524,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 9, 2024",
         description: "Wire transfer from Empower Bank",
         status: "Success",
-        amount_usd: 450000.0,
+        amount_usd: 420000.0,
         account_no: "****5009",
       },
       {
@@ -532,7 +532,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 8, 2024",
         description: "Wire transfer from Empower Bank",
         status: "Success",
-        amount_usd: 320000.0,
+        amount_usd: 290000.0,
         account_no: "****5009",
       },
       {
@@ -540,7 +540,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 7, 2024",
         description: "Wire transfer from Empower Bank",
         status: "Success",
-        amount_usd: 390000.0,
+        amount_usd: 360000.0,
         account_no: "****5009",
       },
       {
