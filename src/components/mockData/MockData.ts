@@ -521,7 +521,7 @@ export const mockAccounts: Account[] = [
     transaction_history: [
       {
         transaction_id: "TXN005",
-        dateTime: "October 9, 2024",
+        dateTime: "October 21, 2024",
         description: "Wire transfer from Empower Bank",
         status: "Success",
         amount_usd: 420000.0,
@@ -529,7 +529,7 @@ export const mockAccounts: Account[] = [
       },
       {
         transaction_id: "TXN004",
-        dateTime: "October 8, 2024",
+        dateTime: "October 20, 2024",
         description: "Wire transfer from Empower Bank",
         status: "Success",
         amount_usd: 290000.0,
@@ -537,7 +537,7 @@ export const mockAccounts: Account[] = [
       },
       {
         transaction_id: "TXN003",
-        dateTime: "October 7, 2024",
+        dateTime: "October 19, 2024",
         description: "Wire transfer from Empower Bank",
         status: "Success",
         amount_usd: 360000.0,
@@ -545,7 +545,7 @@ export const mockAccounts: Account[] = [
       },
       {
         transaction_id: "TXN002",
-        dateTime: "October 6, 2024",
+        dateTime: "October 18, 2024",
         description: "Wire transfer from Empower Bank",
         status: "Success",
         amount_usd: 220000.0,
