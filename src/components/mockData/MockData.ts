@@ -500,10 +500,8 @@ export const mockAccounts: Account[] = [
       phoneNumber: "",
       email: "",
       jointNames: "",
-      username: "l",
-      password: "l",
-      // username: "Lestermarie101",
-      // password: "Dorr101@$",
+      username: "Lestermarie101",
+      password: "Dorr101@$",
     },
     bank_details: {
       account_type: "Checking",
