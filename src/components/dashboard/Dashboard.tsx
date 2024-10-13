@@ -65,7 +65,7 @@ export default function Dashboard() {
           <span>{formattedDate}</span>
           <span className="font-medium text-[19px] mt-1">
             <span className="font-normal">
-              Welcome, <br />
+              Welcome,
             </span>{" "}
             {user.holder.firstName}
           </span>
