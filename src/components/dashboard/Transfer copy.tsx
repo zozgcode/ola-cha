@@ -170,7 +170,7 @@ export default function Transfer() {
                       {user.holder.firstName} {user.holder.lastName}
                     </span>
                     <span className="text-sm text-[#303030]">
-                      Balance: {formatCurrency(user.bank_details.balance_usd)}
+                      Balance: {formatCurrency(user.bank_details.current_balance_usd)}
                     </span>
                   </div>
                 </div>
