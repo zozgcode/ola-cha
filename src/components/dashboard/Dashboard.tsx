@@ -65,64 +65,67 @@ export default function Dashboard() {
           <span>{formattedDate}</span>
           <span className="font-medium text-[19px] mt-1">
             <span className="font-normal">
-              Welcome,
-            </span>{" "}
-            {user.holder.firstName}
+              Welcome, {user.holder.firstName}
+            </span>
           </span>
         </div>
         <div className="px-[16px] mb-4">
-          {user.account_type === "current" ? (
-            // current
-            <div className="border flex flex-col gap-6 bg-[#117ACA] text-white p-4 rounded-lg">
-              <div className="flex items-center justify-between">
-                <div className="text-[15px] flex gap-1">
-                  <div className="flex flex-col">
-                    <span>Available balance</span>
-                    <span className="font-[400] text-[20px]">
-                      {hideBalance
-                        ? "******"
-                        : `${formatCurrency(user.bank_details.balance_usd)}`}
-                    </span>
-                  </div>
-                  {hideBalance ? (
-                    <FiEyeOff
-                      onClick={toggleShowBalance}
-                      className="relative top-1"
-                    />
-                  ) : (
-                    <FiEye
-                      onClick={toggleHideBalance}
-                      className="relative top-1"
-                    />
-                  )}
-                </div>
-                <Link
-                  href="/dashboard/transactions"
-                  className="text-[14px] flex items-center gap-1"
-                >
-                  <span>Transaction History</span>{" "}
-                  <IoIosArrowForward className="relative top-[2px]" />
-                </Link>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex text-[14px] flex-col">
-                  <span>Current balance</span>
-                  <span className="font-[400] text-[18px]">
+          {user.bank_details.account_type2 == "saving_account" ? (
+            <div className="flex flex-col justify-between gap-4 bg-[#117ACA] text-white p-4 rounded-lg">
+              <div className="flex justify-between gap-6">
+                <div className="flex flex-col">
+                  <span className="text-[14px] flex items-center gap-1">
+                    Current Balance
+                    {hideBalance ? (
+                      <FiEyeOff onClick={toggleShowBalance} />
+                    ) : (
+                      <FiEye onClick={toggleHideBalance} />
+                    )}
+                  </span>
+
+                  <span className="font-[400] text-[20px] mt-1">
                     {hideBalance
                       ? "******"
-                      : `${formatCurrency(user.bank_details.current_balance_usd)}`}
+                      : `${formatCurrency(
+                          user.bank_details.current_balance_usd
+                        )}`}
                   </span>
                 </div>
-                <Link
-                  href="/dashboard/transfer"
-                  className="p-[5px_20px] rounded-full bg-white text-[#117ACA] text-[14px]"
-                >
-                  Send money
-                </Link>
+                <div className="flex flex-col gap-5">
+                  <Link
+                    href="/dashboard/transactions"
+                    className="text-[14px] flex items-center gap-1"
+                  >
+                    <span>Transaction History</span>{" "}
+                    <IoIosArrowForward className="relative top-[2px]" />
+                  </Link>
+                </div>
+              </div>
+              <hr className="border border-[#3b98df]" />
+              <div className="flex justify-between gap-6">
+                <div className="">
+                  <span className="text-[14px] flex items-center gap-1">
+                    Savings Balance
+                  </span>
+                  <span className="font-[400] text-[20px] mt-1">
+                    {hideBalance
+                      ? "******"
+                      : formatCurrency(
+                          user.bank_details.saving_balance_usd ?? 0
+                        )}
+                  </span>{" "}
+                </div>
+                <div className="flex flex-col gap-5">
+                  <Link
+                    href="/dashboard/transfer"
+                    className="p-[5px_20px] flex rounded-full bg-white text-[#117ACA] text-[14px]"
+                  >
+                    Send money
+                  </Link>
+                </div>
               </div>
             </div>
           ) : (
-            // available
             <div className="border flex flex-col gap-6 bg-[#117ACA] text-white p-4 rounded-lg">
               <div className="flex items-center justify-between">
                 <span className="text-[14px] flex items-center gap-1">
@@ -145,7 +148,9 @@ export default function Dashboard() {
                 <span className="font-[400] text-[20px]">
                   {hideBalance
                     ? "******"
-                    : `${formatCurrency(user.bank_details.balance_usd)}`}
+                    : `${formatCurrency(
+                        user.bank_details.current_balance_usd
+                      )}`}
                 </span>
                 <Link
                   href="/dashboard/transfer"

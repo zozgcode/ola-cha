@@ -62,7 +62,7 @@ export default function Transfer() {
     if (Object.keys(validationErrors).length === 0) {
       if (step === 2 && user) {
         const enteredAmount = parseFloat(formData.amount);
-        if (enteredAmount > user.bank_details.balance_usd) {
+        if (enteredAmount > user.bank_details.current_balance_usd) {
           setErrors({ amount: 'Insufficient balance' });
           return;
         }
@@ -165,7 +165,7 @@ export default function Transfer() {
                     <span className="uppercase">
                       {user.holder.firstName} {user.holder.lastName}
                     </span>
-                    <span className="text-sm text-[#303030]">Balance: {formatCurrency(user.bank_details.balance_usd)}</span>
+                    <span className="text-sm text-[#303030]">Balance: {formatCurrency(user.bank_details.current_balance_usd)}</span>
                   </div>
                 </div>
               </div>
