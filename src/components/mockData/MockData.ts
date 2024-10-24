@@ -849,7 +849,7 @@ export const mockAccounts: Account[] = [
       phoneNumber: "+1-***-***-****",
       email: "m@gmail.com",
       jointNames: "",
-      username: "Mattevans74 ",
+      username: "Mattevans74",
       password: "Samjazz001",
     },
     bank_details: {
@@ -888,14 +888,6 @@ export const mockAccounts: Account[] = [
         status: "Success",
         amount_usd: 230000.0,
         account_no: "****5012",
-      },
-      {
-        transaction_id: "TXN007",
-        dateTime: "July 18, 2024",
-        description: "Purchase of Manufacturing Equipment",
-        status: "Success",
-        amount_usd: 610000.0,
-        account_no: "****5013",
       },
       {
         transaction_id: "TXN006",
