@@ -948,8 +948,8 @@ export const mockAccounts: Account[] = [
       phoneNumber: "+1-***-***-****",
       email: "m@gmail.com",
       jointNames: "",
-      username: "m",
-      password: "k",
+      username: "Marina60",
+      password: "Kimberly12",
     },
     bank_details: {
       account_type: "Checking",
