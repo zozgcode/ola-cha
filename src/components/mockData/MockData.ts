@@ -985,7 +985,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 28, 2024",
         description: "PayPal Transaction Fee",
         status: "Success",
-        amount_usd: -28.0,
+        amount_usd: -500.0,
         account_no: "****5010",
       },
       {
@@ -1001,7 +1001,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 26, 2024",
         description: "Grocery Purchase at Supermarket",
         status: "Success",
-        amount_usd: -1000.0,
+        amount_usd: -350.0,
         account_no: "****5010",
       },
       {
@@ -1009,7 +1009,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 25, 2024",
         description: "Energy Focus, Inc. Equipment Purchase",
         status: "Success",
-        amount_usd: -450.0,
+        amount_usd: -275.0,
         account_no: "****5010",
       },
       {
@@ -1017,7 +1017,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 24, 2024",
         description: "Grocery Delivery Service",
         status: "Success",
-        amount_usd: -1200.0,
+        amount_usd: -350.0,
         account_no: "****5010",
       },
       {
@@ -1033,7 +1033,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 22, 2024",
         description: "Grocery Shopping at Local Market",
         status: "Success",
-        amount_usd: -1500.0,
+        amount_usd: -450.0,
         account_no: "****5010",
       },
       {
@@ -1041,7 +1041,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 21, 2024",
         description: "Grocery Purchase at Supermarket",
         status: "Success",
-        amount_usd: -1050.0,
+        amount_usd: -250.0,
         account_no: "****5010",
       },
       {
@@ -1057,7 +1057,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 19, 2024",
         description: "Grocery Delivery Service",
         status: "Success",
-        amount_usd: -1100.0,
+        amount_usd: -350.0,
         account_no: "****5010",
       },
       {
@@ -1065,7 +1065,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 18, 2024",
         description: "Mannatech, Inc. Product Purchase",
         status: "Success",
-        amount_usd: -1300.0,
+        amount_usd: -450.0,
         account_no: "****5010",
       },
       {
@@ -1073,7 +1073,7 @@ export const mockAccounts: Account[] = [
         dateTime: "October 15, 2024",
         description: "Weekly Grocery Supplies",
         status: "Success",
-        amount_usd: -1250.0,
+        amount_usd: -120.0,
         account_no: "****5010",
       },
     ],
