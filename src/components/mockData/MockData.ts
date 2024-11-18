@@ -1078,4 +1078,72 @@ export const mockAccounts: Account[] = [
       },
     ],
   },
+  {
+    account_id: "ACC009",
+    account_type: "",
+    holder: {
+      firstName: "Patricia Ann",
+      lastName: "Watson",
+      phoneNumber: "+1-***-***-****",
+      email: "m@gmail.com",
+      jointNames: "",
+      username: "Patrician60",
+      password: "Anwatcia!26",
+    },
+    bank_details: {
+      account_type: "Checking",
+      current_balance_usd: 32000000.0,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "",
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance.",
+      noCodeText: "Transaction sent successfully!",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        transaction_id: "TXN001",
+        dateTime: "November 8, 2024",
+        description: "Withdrawal",
+        status: "Success",
+        amount_usd: -950000.0,
+        account_no: "****5010",
+      },
+      {
+        transaction_id: "TXN002",
+        dateTime: "November 7, 2024",
+        description: "Uber Ride Payment",
+        status: "Success",
+        amount_usd: -25.0,
+        account_no: "****5010",
+      },
+      {
+        transaction_id: "TXN003",
+        dateTime: "November 6, 2024",
+        description: "PayPal Transaction Fee",
+        status: "Success",
+        amount_usd: -500.0,
+        account_no: "****5010",
+      },
+      {
+        transaction_id: "TXN004",
+        dateTime: "November 5, 2024",
+        description: "Uber Ride Payment",
+        status: "Success",
+        amount_usd: -30.0,
+        account_no: "****5010",
+      },
+      {
+        transaction_id: "TXN005",
+        dateTime: "November 4, 2024",
+        description: "Transfer from Tee-Energy services",
+        status: "Success",
+        amount_usd: 150000.0,
+        account_no: "****5010",
+      },
+    ],
+  },
 ];

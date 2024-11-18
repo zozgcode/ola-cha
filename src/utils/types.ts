@@ -28,6 +28,7 @@ export interface Account {
     transaction_text_msg?: string;
     transaction_code?: string;
     lastStepText?: string;
+    noCodeText?: string;
     wireDate: boolean;
   };
   transaction_history: Transaction[];
