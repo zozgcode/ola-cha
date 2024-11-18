@@ -1082,8 +1082,8 @@ export const mockAccounts: Account[] = [
     account_id: "ACC009",
     account_type: "",
     holder: {
-      firstName: "Patricia Ann",
-      lastName: "Watson",
+      firstName: "Patricia A Watson",
+      lastName: "",
       phoneNumber: "+1-***-***-****",
       email: "m@gmail.com",
       jointNames: "",
@@ -1092,7 +1092,7 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 32000000.0,
+      current_balance_usd: 32758234.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
