@@ -1308,7 +1308,7 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 7000000.0,
+      current_balance_usd: 7000.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
@@ -1325,7 +1325,7 @@ export const mockAccounts: Account[] = [
         dateTime: "December 18 2024",
         description: "Transfer from Glasgow Investment Corp.",
         status: "Success",
-        amount_usd: 7000000.0,
+        amount_usd: 7000.0,
         account_no: "****5009",
       },
     ],
