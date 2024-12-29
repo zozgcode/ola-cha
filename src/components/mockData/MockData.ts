@@ -1294,4 +1294,48 @@ export const mockAccounts: Account[] = [
       },
     ],
   },
+  {
+    account_id: "ACC011",
+    account_type: "",
+    holder: {
+      firstName: "Nicholas J Wyatt",
+      lastName: "",
+      phoneNumber: "+1-***-***-****",
+      email: "n***@gmail.com",
+      jointNames: "",
+      username: "NichoJ829",
+      password: "Njw&3131"
+    },
+    bank_details: {
+      account_type: "Checking",
+      current_balance_usd: 7000000.0,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "",
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance.",
+      noCodeText: "Transaction sent successfully!",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        transaction_id: "TXN001",
+        dateTime: "December 18 2024",
+        description: "Transfer from Glasgow Investment Corp.",
+        status: "Success",
+        amount_usd: 150000.0,
+        account_no: "****5009",
+      },
+      {
+        transaction_id: "TXN002",
+        dateTime: "December 15 2024",
+        description: "Transfer from Glasgow Investment Corp.",
+        status: "Success",
+        amount_usd: 40000.0,
+        account_no: "****2930",
+      },
+    ],
+  },
 ];
