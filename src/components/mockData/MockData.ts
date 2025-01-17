@@ -1632,7 +1632,7 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 70800.0,
+      current_balance_usd: 72800.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
