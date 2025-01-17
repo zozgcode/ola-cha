@@ -41,5 +41,5 @@ export interface Transaction {
   description: string;
   status: string;
   amount_usd: number;
-  account_no: string;
+  account_no?: string;
 }

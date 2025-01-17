@@ -1645,7 +1645,18 @@ export const mockAccounts: Account[] = [
     },
     transaction_history: [
       {
-        transaction_id: "TXN001",
+        dateTime: "January 15, 2025",
+        description: "Transfer from KINK.COM",
+        status: "Success",
+        amount_usd: 1000.0,
+      },
+      {
+        dateTime: "January 8, 2025",
+        description: "Transfer from KINK.COM",
+        status: "Success",
+        amount_usd: 1000.0,
+      },
+      {
         dateTime: "January 01, 2025",
         description: "Transfer from KINK.COM",
         status: "Success",
