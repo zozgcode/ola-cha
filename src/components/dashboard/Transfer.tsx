@@ -136,6 +136,11 @@ export default function Transfer() {
           errors.routingNumber = 'Routing number must be between 8 and 12 digits';
         }
       }
+    } else if (step === 2) {
+      if (!formData.amount) errors.amount = 'Amount is required';
+    } else if (step === 3) {
+      if (formData.transCode !== user?.transaction_mgs_code.transaction_code) errors.transCode = 'Incorrect transaction code';
+      // if (formData.transCode !== generatedCode) errors.transCode = "Incorrect transaction code";
     }
   
     return errors;
