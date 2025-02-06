@@ -38,8 +38,8 @@ const TransactionHistory: React.FC<TransactionHistoryProps> = ({ user, hideBalan
                 </div>
               </div>
               <div className="flex flex-col gap-1 justify-between text-right">
-                <span className={`text-[14px] font-[600] ${transaction.amount_usd < 0 ? "text-red-600" : ""}`}>{hideBalance ? "*****" : `${formatCurrency(transaction.amount_usd)}`}</span>
-                <span className={`text-[10px] font-medium ${transaction.status === "Pending" ? "text-green-600" : "text-green-600"}`}>{transaction.status}</span>
+                <span className={`text-[14px] font-[600] ${transaction.amount_usd < 0 ? 'text-red-800' : ''}`}>{hideBalance ? '*****' : `${formatCurrency(transaction.amount_usd)}`}</span>
+                <span className={`text-[10px] font-medium ${transaction.status === 'Pending' ? 'text-yellow-600' : 'text-green-600'}`}>{transaction.status}</span>
               </div>
             </div>
           ))}
