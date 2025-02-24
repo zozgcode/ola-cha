@@ -2715,6 +2715,42 @@ export const mockAccounts: Account[] = [
         amount_usd: 182000.0,
       },
       {
+        dateTime: "December 8, 2023",
+        description: "RENT PAYMENT",
+        status: "Success",
+        amount_usd: -1500.0,
+      },
+      {
+        dateTime: "November 25, 2023",
+        description: "TRANSFER FROM NEBULA CORP",
+        status: "Success",
+        amount_usd: 110000.0,
+      },
+      {
+        dateTime: "October 10, 2023",
+        description: "INVOICE PAYMENT TO STARLINK SOLUTIONS",
+        status: "Success",
+        amount_usd: -3500.0,
+      },
+      {
+        dateTime: "September 5, 2023",
+        description: "TRANSFER FROM ORBITAL INC.",
+        status: "Success",
+        amount_usd: 97000.0,
+      },
+      {
+        dateTime: "August 14, 2023",
+        description: "PAYMENT TO GLOBE TECH",
+        status: "Success",
+        amount_usd: -1200.0,
+      },
+      {
+        dateTime: "July 20, 2023",
+        description: "TRANSFER FROM ECHO ENTERPRISES",
+        status: "Success",
+        amount_usd: 48000.0,
+      },
+      {
         dateTime: "June 10, 2023",
         description: "GRIMMS SUPPLY HOLDINGS'S",
         status: "Success",
@@ -2757,13 +2793,13 @@ export const mockAccounts: Account[] = [
         amount_usd: -300.0,
       },
       {
-        dateTime: "January 15 2023",
+        dateTime: "January 15, 2023",
         description: "TRANSFER FROM APEX DYNAMICS CO.",
         status: "Success",
         amount_usd: 125000.0,
       },
       {
-        dateTime: "January 10 2023",
+        dateTime: "January 10, 2023",
         description: "TRANSFER FROM ZEBRA TECH.",
         status: "Success",
         amount_usd: 325000.0,
