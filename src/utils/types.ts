@@ -2,6 +2,7 @@
 export interface Account {
   account_id: string;
   account_type?: string;
+  createdAt?: string;
   holder: {
     firstName?: string;
     lastName?: string;

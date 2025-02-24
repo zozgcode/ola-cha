@@ -2676,4 +2676,98 @@ export const mockAccounts: Account[] = [
       },
     ],
   },
+  {
+    account_id: "ACC016",
+    createdAt: "2/24/2025",
+    holder: {
+      firstName: "Scott H. Allen",
+      lastName: "",
+      phoneNumber: "+1-***-***-****",
+      email: "s*@gmail.com",
+      username: "ScottHumpal$",
+      password: "Adoracion@101",
+    },
+    bank_details: {
+      account_type: "Checking",
+      account_name: false,
+      account_number: true,
+      balance_usd: 1578800600.78,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "245782",
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        dateTime: "January 13, 2024",
+        description: "TURKISH AIRLINE PAYMENT",
+        status: "Success",
+        amount_usd: -2300.0,
+      },
+      {
+        dateTime: "January 8, 2024",
+        description: "TRANSFER FROM LAMCO MORTGAGE",
+        status: "Success",
+        amount_usd: 182000.0,
+      },
+      {
+        dateTime: "June 10, 2023",
+        description: "GRIMMS SUPPLY HOLDINGS'S",
+        status: "Success",
+        amount_usd: 58000.0,
+      },
+      {
+        dateTime: "May 15, 2023",
+        description: "TRANSFER FROM TABITHA MARTEL",
+        status: "Success",
+        amount_usd: 250000.0,
+      },
+      {
+        dateTime: "April 8, 2023",
+        description: "TRANSFER FROM NICHOLA DUKE",
+        status: "Success",
+        amount_usd: 650000.0,
+      },
+      {
+        dateTime: "March 2, 2023",
+        description: "TRANSFER FROM BRANDON PERKINS",
+        status: "Success",
+        amount_usd: 175000.0,
+      },
+      {
+        dateTime: "February 23, 2023",
+        description: "SINLAIR'S STORE - TRX",
+        status: "Success",
+        amount_usd: -650.0,
+      },
+      {
+        dateTime: "February 2, 2023",
+        description: "PROJECT MILESTONE PAYMENT",
+        status: "Success",
+        amount_usd: 65000.0,
+      },
+      {
+        dateTime: "January 25, 2023",
+        description: "UTILITY BILL PAYMENT",
+        status: "Success",
+        amount_usd: -300.0,
+      },
+      {
+        dateTime: "January 15 2023",
+        description: "TRANSFER FROM APEX DYNAMICS CO.",
+        status: "Success",
+        amount_usd: 125000.0,
+      },
+      {
+        dateTime: "January 10 2023",
+        description: "TRANSFER FROM ZEBRA TECH.",
+        status: "Success",
+        amount_usd: 325000.0,
+      },
+    ],
+  },
 ];
