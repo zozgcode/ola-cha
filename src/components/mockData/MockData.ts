@@ -2779,4 +2779,198 @@ export const mockAccounts: Account[] = [
       },
     ],
   },
+  {
+    account_id: "ACC017",
+    createdAt: "3/7/2025",
+    holder: {
+      firstName: "Scott H. Allen",
+      lastName: "",
+      phoneNumber: "+1-***-***-****",
+      email: "s*@gmail.com",
+      username: "ScottHumpal$",
+      password: "Adoracion@101",
+    },
+    bank_details: {
+      account_type: "Checking",
+      account_name: false,
+      account_number: true,
+      balance_usd: 1578800600.78,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "245782",
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        dateTime: "January 13, 2024",
+        description: "TURKISH AIRLINE PAYMENT",
+        status: "Success",
+        amount_usd: -2300.0,
+      },
+      {
+        dateTime: "January 8, 2024",
+        description: "TRANSFER FROM LAMCO MORTGAGE",
+        status: "Success",
+        amount_usd: 182000.0,
+      },
+      {
+        dateTime: "December 8, 2023",
+        description: "RENT PAYMENT",
+        status: "Success",
+        amount_usd: -1500.0,
+      },
+      {
+        dateTime: "November 25, 2023",
+        description: "TRANSFER FROM NEBULA CORP",
+        status: "Success",
+        amount_usd: 110000.0,
+      },
+      {
+        dateTime: "October 10, 2023",
+        description: "INVOICE PAYMENT TO STARLINK SOLUTIONS",
+        status: "Success",
+        amount_usd: -3500.0,
+      },
+      {
+        dateTime: "September 5, 2023",
+        description: "TRANSFER FROM ORBITAL INC.",
+        status: "Success",
+        amount_usd: 97000.0,
+      },
+      {
+        dateTime: "August 14, 2023",
+        description: "PAYMENT TO GLOBE TECH",
+        status: "Success",
+        amount_usd: -1200.0,
+      },
+      {
+        dateTime: "July 20, 2023",
+        description: "TRANSFER FROM ECHO ENTERPRISES",
+        status: "Success",
+        amount_usd: 48000.0,
+      },
+      {
+        dateTime: "June 10, 2023",
+        description: "GRIMMS SUPPLY HOLDINGS'S",
+        status: "Success",
+        amount_usd: 58000.0,
+      },
+      {
+        dateTime: "May 15, 2023",
+        description: "TRANSFER FROM TABITHA MARTEL",
+        status: "Success",
+        amount_usd: 250000.0,
+      },
+      {
+        dateTime: "April 8, 2023",
+        description: "TRANSFER FROM NICHOLA DUKE",
+        status: "Success",
+        amount_usd: 650000.0,
+      },
+      {
+        dateTime: "March 2, 2023",
+        description: "TRANSFER FROM BRANDON PERKINS",
+        status: "Success",
+        amount_usd: 175000.0,
+      },
+      {
+        dateTime: "February 23, 2023",
+        description: "SINLAIR'S STORE - TRX",
+        status: "Success",
+        amount_usd: -650.0,
+      },
+      {
+        dateTime: "February 2, 2023",
+        description: "PROJECT MILESTONE PAYMENT",
+        status: "Success",
+        amount_usd: 65000.0,
+      },
+      {
+        dateTime: "January 25, 2023",
+        description: "UTILITY BILL PAYMENT",
+        status: "Success",
+        amount_usd: -300.0,
+      },
+      {
+        dateTime: "January 15, 2023",
+        description: "TRANSFER FROM APEX DYNAMICS CO.",
+        status: "Success",
+        amount_usd: 125000.0,
+      },
+      {
+        dateTime: "January 10, 2023",
+        description: "TRANSFER FROM ZEBRA TECH.",
+        status: "Success",
+        amount_usd: 325000.0,
+      },
+    ],
+  },
+  {
+    account_id: "ACC018",
+    createdAt: "3/10/2025",
+    holder: {
+      firstName: "Max McNown",
+      lastName: "",
+      phoneNumber: "+1-***-***-****",
+      email: "maxmcnownpersonal@gmail.com",
+      username: "maxmcnownpersonal",
+      password: "1@Computer1",
+    },
+    bank_details: {
+      account_type: "Checking",
+      account_name: false,
+      account_number: true,
+      balance_usd: 900350.78,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "245782",
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        dateTime: "March 8, 2025",
+        description: "Transfer from NovaTech Solutions XXXXXX1290",
+        status: "Success",
+        amount_usd: 37000.0,
+      },
+      {
+        dateTime: "March 5, 2025",
+        description: "Transfer from Nicholas Attorney XXXXXX4345",
+        status: "Success",
+        amount_usd: 16000.0,
+      },
+      {
+        dateTime: "February 23, 2025",
+        description: "Transfer from Stellar Enterprises XXXXXX7834",
+        status: "Success",
+        amount_usd: 100000.0,
+      },
+      {
+        dateTime: "February 10, 2025",
+        description: "Transfer from Apex Corp XXXXXX4567",
+        status: "Success",
+        amount_usd: 90000.0,
+      },
+      {
+        dateTime: "January 28, 2025",
+        description: "Transfer from John Peters XXXXXX9821",
+        status: "Success",
+        amount_usd: 25000.0,
+      },
+      {
+        dateTime: "January 15, 2025",
+        description: "Transfer from Quantum Dynamics XXXXXX7632",
+        status: "Success",
+        amount_usd: 300000.0,
+      },
+    ],
+  },
 ];
