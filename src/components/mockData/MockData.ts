@@ -2979,4 +2979,68 @@ export const mockAccounts: Account[] = [
       },
     ],
   },
+  {
+    account_id: "ACC019",
+    createdAt: "3/19/2025",
+    holder: {
+      firstName: "Grey Thomas",
+      lastName: "",
+      phoneNumber: "***-***-****",
+      email: "rubyashley384@gmail.com",
+      username: "Sirgrey0912",
+      password: "Godisgood1414",
+    },
+    bank_details: {
+      account_type: "Checking",
+      account_name: false,
+      account_number: true,
+      balance_usd: 963000.00,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "245782",
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        dateTime: "May 7, 2015",
+        description: "Store Purchase MTA/NYC TRANSIT - XXXXXX1290",
+        status: "Success",
+        amount_usd: -5.0,
+      },
+      {
+        dateTime: "May 6, 2015",
+        description: "Store Purchase DUNKIN DONUTS - XXXXXX4345",
+        status: "Success",
+        amount_usd: -4.88,
+      },
+      {
+        dateTime: "May 5, 2015",
+        description: "Store Purchase DORIAN GRAY - XXXXXX7834",
+        status: "Success",
+        amount_usd: -22.84,
+      },
+      {
+        dateTime: "January 22, 2011",
+        description: "INTEREST CREDIT - XXXXXX9821",
+        status: "Success",
+        amount_usd: 3.02,
+      },
+      {
+        dateTime: "August 08, 2010",
+        description: "ZELLE ACCT CREDIT - XXXXXX7632",
+        status: "Success",
+        amount_usd: 1200.0,
+      },
+      {
+        dateTime: "January 10, 2009",
+        description: "ACH DEBIT CHASE CREDIT CRD - XXXXXX0368",
+        status: "Success",
+        amount_usd: 15000.0,
+      },
+    ],
+  },
 ];
