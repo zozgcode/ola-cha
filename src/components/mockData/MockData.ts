@@ -3047,7 +3047,7 @@ export const mockAccounts: Account[] = [
     account_id: "ACC020",
     createdAt: "4/3/2025",
     holder: {
-      firstName: "Nannette Pizarro Seaman",
+      firstName: "Nannette Pizarro",
       lastName: "",
       phoneNumber: "***-***-****",
       email: "n@gmail.com",
