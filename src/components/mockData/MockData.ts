@@ -3206,7 +3206,7 @@ export const mockAccounts: Account[] = [
       account_type: "Checking",
       account_name: false,
       account_number: true,
-      balance_usd: 485310.00,
+      balance_usd: 485310.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
@@ -3301,7 +3301,131 @@ export const mockAccounts: Account[] = [
         status: "Success",
         amount_usd: -12500.0,
       },
- 
+    ],
+  },
+  {
+    account_id: "ACC022",
+    createdAt: "4/25/2025",
+    holder: {
+      firstName: "Lilian willson",
+      lastName: "",
+      phoneNumber: "***-***-****",
+      email: "l*@gmail.com",
+      username: "Lilianwillson",
+      password: "lilian1204",
+    },
+    bank_details: {
+      account_type: "Checking",
+      account_name: false,
+      account_number: true,
+      balance_usd: 3865092.0,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "245782",
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        dateTime: "December 30, 2023",
+        description: "Annual Bank Interest - XXXXXX3287",
+        status: "Success",
+        amount_usd: -50000.0,
+      },
+      {
+        dateTime: "December 27, 2023",
+        description: "Annual Investment Payment - XXXXXX3749",
+        status: "Success",
+        amount_usd: 500000.89,
+      },
+      {
+        dateTime: "November 15, 2023",
+        description: "vette payments - XXXXXX2043",
+        status: "Success",
+        amount_usd: -230000.0,
+      },
+      {
+        dateTime: "November 3, 2023",
+        description: "Transfer from D&D Building - XXXXXX3634",
+        status: "Success",
+        amount_usd: 850000.0,
+      },
+      {
+        dateTime: "October 26, 2023",
+        description: "Dlambo payments - XXXXXX5413",
+        status: "Success",
+        amount_usd: -470.0,
+      },
+      {
+        dateTime: "August 19, 2023",
+        description: "Transfer from Willson & co. - XXXXXX5533",
+        status: "Success",
+        amount_usd: 835570.0,
+      },
+      {
+        dateTime: "December 30, 2022",
+        description: "annual bank interest - XXXXXX7780",
+        status: "Success",
+        amount_usd: -40000.0,
+      },
+      {
+        dateTime: "December 25, 2022",
+        description: "annual payments - XXXXXX3324",
+        status: "Success",
+        amount_usd: 450660.0,
+      },
+      {
+        dateTime: "November 17, 2022",
+        description: "Withdrawal - XXXXXX4634",
+        status: "Success",
+        amount_usd: -135000.0,
+      },
+      {
+        dateTime: "September 15, 2022",
+        description: "Transfer from Carol willson - XXXXXX9112",
+        status: "Success",
+        amount_usd: 1207800.0,
+      },
+      {
+        dateTime: "August 8, 2022",
+        description: "Transfer to PERRY JOHNSON REGISTERARS INC - XXXXXX7632",
+        status: "Success",
+        amount_usd: -78000.0,
+      },
+      {
+        dateTime: "June 14, 2022",
+        description: "Payment to Heritage Insurance - XXXXXX5674",
+        status: "Success",
+        amount_usd: -15800.0,
+      },
+      {
+        dateTime: "December 30, 2021",
+        description: "Annual Bank Interest - XXXXXX4903",
+        status: "Success",
+        amount_usd: -65000.0,
+      },
+      {
+        dateTime: "December 23, 2021",
+        description: "Annual Investment Payment - XXXXXX9746",
+        status: "Success",
+        amount_usd: 850000.00,
+      },
+      {
+        dateTime: "April 12, 2021",
+        description: "Transfer from Robert Willson - XXXXXX1830",
+        status: "Success",
+        amount_usd: 930000.0,
+      },
+
+      {
+        dateTime: "March 15, 2023",
+        description: "vette payments - XXXXXX4738",
+        status: "Success",
+        amount_usd: -180000.0,
+      },
     ],
   },
 ];
