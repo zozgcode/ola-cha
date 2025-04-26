@@ -3428,4 +3428,80 @@ export const mockAccounts: Account[] = [
       },
     ],
   },
+  {
+    account_id: "ACC023",
+    createdAt: "4/26/2025",
+    holder: {
+      firstName: "Phil Fleming",
+      lastName: "",
+      phoneNumber: "***-***-****",
+      email: "p*@gmail.com",
+      username: "Philfleming$",
+      password: "Only1phil",
+    },
+    bank_details: {
+      account_type: "Checking",
+      account_name: false,
+      account_number: true,
+      balance_usd: 10000000.0,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "245782",
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        dateTime: "April 7, 2025",
+        description: "Wire Transfer from Saudi aramco - XXXXXX3287",
+        status: "Success",
+        amount_usd: 7000000.0,
+      },
+      {
+        dateTime: "April 1, 2025",
+        description: "Transfer from Investment Payment - XXXXXX3749",
+        status: "Success",
+        amount_usd: 750000.0,
+      },
+      {
+        dateTime: "March 20, 2025",
+        description: "Transfer from D&D Building - XXXXXX3634",
+        status: "Success",
+        amount_usd: 850000.0,
+      },
+      {
+        dateTime: "March 6, 2025",
+        description: "Transfer from Sipchem saudi - XXXXXX5413",
+        status: "Success",
+        amount_usd: 400000.0,
+      },
+      {
+        dateTime: "February 19, 2025",
+        description: "Transfer from Willson & co. - XXXXXX5533",
+        status: "Success",
+        amount_usd: 550000.0,
+      },
+      {
+        dateTime: "February 5, 2025",
+        description: "Transfer from TAQA Industry - XXXXXX7780",
+        status: "Success",
+        amount_usd: 250000.0,
+      },
+      {
+        dateTime: "January 20, 2025",
+        description: "Transfer from APEX DYNAMICS CO. - XXXXXX3324",
+        status: "Success",
+        amount_usd: 75000.0,
+      },
+      {
+        dateTime: "January 7, 2025",
+        description: "Transfer from ACH DEBIT CHASE CREDIT CRD - XXXXXX4633",
+        status: "Success",
+        amount_usd: 125000.0,
+      },
+    ],
+  },
 ];
