@@ -3504,4 +3504,98 @@ export const mockAccounts: Account[] = [
       },
     ],
   },
+  {
+    account_id: "ACC024",
+    createdAt: "5/6/2025",
+    holder: {
+      firstName: "Katherine Leonard",
+      lastName: "",
+      phoneNumber: "***-***-****",
+      email: "katherineleonard770@gmail.com ",
+      username: "Katherineleonard770",
+      password: "Katty1167",
+    },
+    bank_details: {
+      account_type: "Checking",
+      account_name: false,
+      account_number: true,
+      balance_usd: 11678899.00,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "245782",
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        dateTime: "January 12, 2025",
+        description: "Transfer to Marco Montes - XXXXXX3287",
+        status: "Pending",
+        amount_usd: -1000000.0,
+      },
+      {
+        dateTime: "January 7, 2025",
+        description: "Transfer from Ziraat bank - XXXXXX7353",
+        status: "Success",
+        amount_usd: 4500000.0,
+      },
+      {
+        dateTime: "January 7, 2025",
+        description: "Transfer from Ziraat bank - XXXXXX2463",
+        status: "Success",
+        amount_usd: 2400000.0,
+      },
+      {
+        dateTime: "January 3, 2025",
+        description: "Transfer from Ziraat bank - XXXXXX1356",
+        status: "Success",
+        amount_usd: 2000000.0,
+      },
+      {
+        dateTime: "January 2, 2025",
+        description: "Transfer from Ziraat bank - XXXXXX6453",
+        status: "Success",
+        amount_usd: 4000000.0,
+      },
+      {
+        dateTime: "January 23, 2024",
+        description: "Transfer to Gary wallo slicker - XXXXXX3564",
+        status: "Success",
+        amount_usd: -1300.0,
+      },
+      {
+        dateTime: "August 4, 2023",
+        description: "Transfer to Jeff brown - XXXXXX5749",
+        status: "Success",
+        amount_usd: -1500.0,
+      },
+      {
+        dateTime: "July 23, 2023",
+        description: "Transfer to Charles Stanley - XXXXXX3467",
+        status: "Success",
+        amount_usd: -1200.0,
+      },
+      {
+        dateTime: "June 14, 2023",
+        description: "Transfer to sileno zanoni - XXXXXX0467",
+        status: "Success",
+        amount_usd: -2000.0,
+      },
+      {
+        dateTime: "April 2, 2023",
+        description: "Transfer to Mr Jeff - XXXXXX1127",
+        status: "Success",
+        amount_usd: -1450.0,
+      },
+      {
+        dateTime: "january 1, 2023",
+        description: "Transfer to Ashley Co. - XXXXXX4844",
+        status: "Success",
+        amount_usd: -1100.0,
+      },
+    ],
+  },
 ];
