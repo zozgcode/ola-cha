@@ -3595,6 +3595,12 @@ export const mockAccounts: Account[] = [
         amount_usd: 1100000,
       },
       {
+        dateTime: "May 14, 2025",
+        description: "Transfer to Heritage Bank - XXXXXX3478",
+        status: "Success",
+        amount_usd: -62000,
+      },
+      {
         dateTime: "May 13, 2025",
         description: "Transfer from Jack Whitman - XXXXXX8145",
         status: "Success",
