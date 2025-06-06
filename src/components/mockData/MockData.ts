@@ -3782,4 +3782,67 @@ export const mockAccounts: Account[] = [
       },
     ],
   },
+  {
+    account_id: "ACC026",
+    createdAt: "6/6/2025", // m/d/y
+    holder: {
+      firstName: "Tod Carlsson",
+      lastName: "",
+      phoneNumber: "539-250-8045",
+      email: "todcarlsson618@gmail.com",
+      username: "todcarlsson618@gmail.com",
+      password: "Ruth0011",
+    },
+    bank_details: {
+      account_type: "Checking",
+      account_name: false,
+      account_number: true,
+      balance_usd: 900000000.0,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "245782",
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        dateTime: "May 28, 2025",
+        description:
+          "Deposit from Swedish bank ( international wire) - XXXXXX28283",
+        status: "Success",
+        amount_usd: 250000000.0,
+      },
+      {
+        dateTime: "May 25, 2025",
+        description:
+          "Deposit from Nordea bank ( international wire) - XXXXXX19374",
+        status: "Success",
+        amount_usd: 200000000.0,
+      },
+      {
+        dateTime: "May 21, 2025",
+        description:
+          "Deposit from SEB (Skandinaviska Enskilda Banken) - XXXXXX37491",
+        status: "Success",
+        amount_usd: 180000000.0,
+      },
+      {
+        dateTime: "May 17, 2025",
+        description:
+          "Deposit from Handelsbanken ( international wire) - XXXXXX84720",
+        status: "Success",
+        amount_usd: 150000000.0,
+      },
+      {
+        dateTime: "May 12, 2025",
+        description:
+          "Deposit from Länsförsäkringar Bank ( international wire) - XXXXXX20467",
+        status: "Success",
+        amount_usd: 120000000.0,
+      },
+    ],
+  },
 ];
