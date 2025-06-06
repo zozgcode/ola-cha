@@ -3797,7 +3797,7 @@ export const mockAccounts: Account[] = [
       account_type: "Checking",
       account_name: false,
       account_number: true,
-      balance_usd: 900000000.0,
+      balance_usd: 902184651.0,
     },
     transaction_mgs_code: {
       transaction_text_msg:
