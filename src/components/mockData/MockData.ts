@@ -3790,7 +3790,7 @@ export const mockAccounts: Account[] = [
       lastName: "",
       phoneNumber: "539-250-8045",
       email: "todcarlsson618@gmail.com",
-      username: "todcarlsson618@gmail.com",
+      username: "todcarlsson618",
       password: "Ruth0011",
     },
     bank_details: {
