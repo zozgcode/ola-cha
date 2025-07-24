@@ -42,16 +42,21 @@ const SelectBks: React.FC<SelectBksProps> = ({
   return (
     <div className="w-full">
       <div className="flex relative items-center justify-between w-full">
-        <div className="flex relative w-full items-center gap-1">
+        <div className="flex bg-[#f8f8f8] px-3 rounded-lg relative w-full items-center gap-1">
           {selectedBank && (
-            <Image
-              src={selectedBank.logo}
-              width={100}
-              height={100}
-              alt={`${selectedBank.name} logo`}
-              className={`w-7 h-6 absolute left-4 ${selectedBank.resize ? "w-11 h-5" : ""}`}
-            />
-            )}
+            <div className="max-w-[100px]">
+              <Image
+                src={selectedBank.logo}
+                alt={`${selectedBank.name} logo`}
+                width={0} // allow CSS to control size
+                height={0}
+                sizes="(max-width: 768px) 50px, 100px"
+                className={`h-5 object-contain ${
+                  selectedBank.resize ? "w-11 h-5" : "w-10 h-4"
+                }`}
+              />
+            </div>
+          )}
           <input
             type="text"
             readOnly
@@ -59,19 +64,26 @@ const SelectBks: React.FC<SelectBksProps> = ({
             onClick={() => setIsModalOpen(true)}
             placeholder="Select a bank"
             // className={`w-full p-3 my-2 min-h-[60px] bg-[#f8f8f8] rounded-lg border-none text-[#2e2e2e] focus:outline-none ${selectedBank ? "pl-[55px]" : ""} ${selectedBank.resize ? "pl-[65px]" : ""}`}
-            className={`w-full p-3 my-2 min-h-[60px] bg-[#f8f8f8] rounded-lg border-none text-[#2e2e2e] focus:outline-none ${
-              selectedBank ? (selectedBank.resize ? "pl-[65px]" : "pl-[55px]") : ""
+            className={`w-full p-3 min-h-[60px] bg-[#f8f8f8] rounded-lg border-none text-[#2e2e2e] focus:outline-none ${
+              selectedBank ? (selectedBank.resize ? "pl-[65px]" : "") : ""
             }`}
           />
         </div>
         <IoIosArrowForward className="text-[#2e2e2e] absolute right-4" />
       </div>
 
-      <div className={`fixed z-20 w-full top-0 right-0 left-0 ${ isModalOpen ? "block" : "hidden" }`} >
+      <div
+        className={`fixed z-20 w-full top-0 right-0 left-0 ${
+          isModalOpen ? "block" : "hidden"
+        }`}
+      >
         <div className="bg-white rounded shadow-lg w-full h-screen">
           <div className="bg-[#117aca] text-[#ffffff] sticky top-0 z-10 p-3 py-5 flex items-center justify-between gap-1">
             <div className="flex items-center gap-2">
-              <IoClose className="relative text-xl top-[1px]" onClick={handleCloseModal} />
+              <IoClose
+                className="relative text-xl top-[1px]"
+                onClick={handleCloseModal}
+              />
               <span className="font-semibold">Select Bank</span>
             </div>
           </div>
@@ -100,9 +112,9 @@ const SelectBks: React.FC<SelectBksProps> = ({
                       width={100}
                       height={100}
                       alt={`${bks.name} logo`}
-                      className="max-w-max h-4"
+                      className="w-[30px] object-contain h-4"
                     />
-                  </div> 
+                  </div>
                   <div className="text-left w-full">{bks.name}</div>
                 </div>
               ))}
