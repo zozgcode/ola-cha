@@ -4094,4 +4094,73 @@ export const mockAccounts: Account[] = [
       },
     ],
   },
+  {
+    account_id: "ACC028",
+    createdAt: "7/28/2025", // m/d/y
+    holder: {
+      firstName: "Mathew Wyant",
+      email: "mathewwy*@gmail.com",
+      username: "mathewwyant488",
+      password: "Ruth0507",
+    },
+    bank_details: {
+      account_type: "Checking",
+      account_name: false,
+      account_number: true,
+      balance_usd: 950650300.0,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "245782",
+      headerText: 'Dear Valued Customer,',
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance.",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        dateTime: "June 5, 2025",
+        description: "Wire Transfer from Skandiabanken - XXXXXX3663",
+        status: "Success",
+        amount_usd: 135637925.0,
+      },
+      {
+        dateTime: "April 18, 2025",
+        description: "Wire Transfer from SBAB - XXXXXX3748",
+        status: "Success",
+        amount_usd: 150083158.0,
+      },
+      {
+        dateTime: "January 22, 2025",
+        description: "Wire Transfer from Handelsbanken - XXXXXX8271",
+        status: "Success",
+        amount_usd: 60261975.0,
+      },
+      {
+        dateTime: "December 9, 2024",
+        description: "Wire Transfer from Nordea - XXXXXX1092",
+        status: "Success",
+        amount_usd: 151913356.0,
+      },
+      {
+        dateTime: "October 3, 2024",
+        description: "Wire Transfer from seb - XXXXXX9984",
+        status: "Success",
+        amount_usd: 199044600.0,
+      },
+      {
+        dateTime: "September 27, 2024",
+        description: "Wire Transfer from Länsförsäkringar Bank - XXXXXX5500",
+        status: "Success",
+        amount_usd: 137012361.0,
+      },
+      {
+        dateTime: "July 15, 2024",
+        description: "Wire Transfer from Swedbank - XXXXXX5378",
+        status: "Success",
+        amount_usd: 116696925.0,
+      },
+    ],
+  },
 ];
