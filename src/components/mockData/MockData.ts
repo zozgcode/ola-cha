@@ -4474,4 +4474,175 @@ export const mockAccounts: Account[] = [
       },
     ]
   },
+  {
+    account_id: "ACC031",
+    createdAt: "8/29/2025", // m/d/y
+    holder: {
+      firstName: "Janet smith",
+      email: "j*@gmail.com",
+      username: "Janet2177",
+      password: "Sarahlaura",
+    },
+    bank_details: {
+      account_type: "Checking",
+      account_name: false,
+      account_number: true,
+      balance_usd:  960769200.0,
+    },
+    transaction_mgs_code: {
+      transaction_text_msg:
+        "To continue this transaction, please enter the code sent to you",
+      transaction_code: "24178",
+      headerText: 'Dear Valued Customer,',
+      lastStepText:
+        "Your account is on hold. You cannot make transactions right now. Please contact our customer service team for assistance.",
+      wireDate: true,
+    },
+    transaction_history: [
+      {
+        dateTime: "May 30, 2025",
+        description: "Vat Fee - XXXXXX4921",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "May 30, 2025",
+        description: "Transfer from NextGen Circuits - XXXXXX1183",
+        status: "Success",
+        amount_usd: 60704334.76,
+      },
+      {
+        dateTime: "May 2, 2025",
+        description: "Vat Fee - XXXXXX8156",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "May 2, 2025",
+        description: "Transfer from IronShield Security - XXXXXX4327",
+        status: "Success",
+        amount_usd: 143950380.14,
+      },
+      {
+        dateTime: "April 5, 2025",
+        description: "Vat Fee - XXXXXX2743",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "April 5, 2025",
+        description: "Transfer from IronShield Security - XXXXXX8920",
+        status: "Success",
+        amount_usd: 37326647.72,
+      },
+      {
+        dateTime: "March 17, 2025",
+        description: "Vat Fee - XXXXXX3095",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "March 17, 2025",
+        description: "Transfer from TechNova Electronics - XXXXXX7775",
+        status: "Success",
+        amount_usd: 53202982.05,
+      },
+      {
+        dateTime: "February 17, 2025",
+        description: "Vat Fee - XXXXXX6508",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "February 17, 2025",
+        description: "Transfer from SecureGuard Ltd - XXXXXX5641",
+        status: "Success",
+        amount_usd: 38630096.56,
+      },
+      {
+        dateTime: "August 30, 2024",
+        description: "Vat Fee - XXXXXX7842",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "August 30, 2024",
+        description: "Transfer from SecureGuard Ltd - XXXXXX1029",
+        status: "Success",
+        amount_usd: 98498977.45,
+      },
+      {
+        dateTime: "May 13, 2024",
+        description: "Vat Fee - XXXXXX1267",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "May 13, 2024",
+        description: "Transfer from NextGen Circuits - XXXXXX6894",
+        status: "Success",
+        amount_usd: 29789003.38,
+      },
+      {
+        dateTime: "May 9, 2024",
+        description: "Vat Fee - XXXXXX5493",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "May 9, 2024",
+        description: "Transfer from EagleEye Protection - XXXXXX3348",
+        status: "Success",
+        amount_usd: 320262151.45,
+      },
+      {
+        dateTime: "March 28, 2024",
+        description: "Vat Fee - XXXXXX4379",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "March 28, 2024",
+        description: "Transfer from TechNova Electronics - XXXXXX2156",
+        status: "Success",
+        amount_usd: 67621032.06,
+      },
+      {
+        dateTime: "March 16, 2024",
+        description: "Vat Fee - XXXXXX6980",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "March 16, 2024",
+        description: "Transfer from Fortress Security Co. - XXXXXX4810",
+        status: "Success",
+        amount_usd: 43509068.62,
+      },
+      {
+        dateTime: "January 15, 2024",
+        description: "Vat Fee - XXXXXX3821",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "January 15, 2024",
+        description: "Transfer from CyberCore Electronics - XXXXXX9703",
+        status: "Success",
+        amount_usd: 35942374.12,
+      },
+      {
+        dateTime: "December 22, 2023",
+        description: "Vat Fee - XXXXXX2649",
+        status: "Success",
+        amount_usd: -2350.00,
+      },
+      {
+        dateTime: "December 22, 2023",
+        description: "Transfer from TechNova Electronics - XXXXXX7425",
+        status: "Success",
+        amount_usd: 31332151.69,
+      },
+    ]
+  },
 ];
