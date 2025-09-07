@@ -1,24 +1,25 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { Account, Transaction } from "@/utils/types";
-import Link from "next/link";
-import TransactionHistory from "./TransactionHistory";
-import Header from "./header/Header";
-import { formatCurrency } from "../formatCurrency";
-import { IoIosArrowForward } from "react-icons/io";
-import { FiEye, FiEyeOff } from "react-icons/fi";
-import Loader from "../Loader";
-import { BillIcon, CardIcon } from "../svgIcons";
+'use client';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { Account } from '@/utils/types';
+import Link from 'next/link';
+import TransactionHistory from './TransactionHistory';
+import Header from './header/Header';
+import { formatCurrency } from '../formatCurrency';
+import { IoIosArrowForward } from 'react-icons/io';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+import Loader from '../Loader';
+import { BillIcon, CardIcon } from '../svgIcons';
+import Image from 'next/image';
 
 const getFormattedDate = () => {
   const options: Intl.DateTimeFormatOptions = {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric'
   };
   const today = new Date();
-  return today.toLocaleDateString("en-US", options);
+  return today.toLocaleDateString('en-US', options);
 };
 
 export default function Dashboard() {
@@ -35,17 +36,17 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    const loggedInUser = localStorage.getItem("loggedInUser");
+    const loggedInUser = localStorage.getItem('loggedInUser');
     if (loggedInUser) {
       setUser(JSON.parse(loggedInUser));
     } else {
-      router.push("/");
+      router.push('/');
     }
   }, [router]);
 
   const handleLogout = () => {
-    localStorage.removeItem("loggedInUser");
-    router.push("/");
+    localStorage.removeItem('loggedInUser');
+    router.push('/');
   };
 
   if (!user) {
@@ -64,62 +65,35 @@ export default function Dashboard() {
         <div className="p-[16px] py-[15px] flex flex-col">
           <span>{formattedDate}</span>
           <span className="font-medium text-[19px] mt-1">
-            <span className="font-normal">
-              Welcome, {user.holder.firstName}
-            </span>
+            <span className="font-normal">Welcome, {user.holder.firstName}</span>
           </span>
         </div>
         <div className="px-[16px] mb-4">
-          {user.bank_details.account_type2 == "saving_account" ? (
+          {user.bank_details.account_type2 == 'saving_account' ? (
             <div className="flex flex-col justify-between gap-4 bg-[#117ACA] text-white p-4 rounded-lg">
               <div className="flex justify-between gap-6">
                 <div className="flex flex-col">
                   <span className="text-[14px] flex items-center gap-1">
                     Current Balance
-                    {hideBalance ? (
-                      <FiEyeOff onClick={toggleShowBalance} />
-                    ) : (
-                      <FiEye onClick={toggleHideBalance} />
-                    )}
+                    {hideBalance ? <FiEyeOff onClick={toggleShowBalance} /> : <FiEye onClick={toggleHideBalance} />}
                   </span>
 
-                  <span className="font-[400] text-[20px] mt-1">
-                    {hideBalance
-                      ? "******"
-                      : `${formatCurrency(
-                          user.bank_details.balance_usd
-                        )}`}
-                  </span>
+                  <span className="font-[400] text-[20px] mt-1">{hideBalance ? '******' : `${formatCurrency(user.bank_details.balance_usd)}`}</span>
                 </div>
                 <div className="flex flex-col gap-5">
-                  <Link
-                    href="/dashboard/transactions"
-                    className="text-[14px] flex items-center gap-1"
-                  >
-                    <span>Transaction History</span>{" "}
-                    <IoIosArrowForward className="relative top-[2px]" />
+                  <Link href="/dashboard/transactions" className="text-[14px] flex items-center gap-1">
+                    <span>Transaction History</span> <IoIosArrowForward className="relative top-[2px]" />
                   </Link>
                 </div>
               </div>
               <hr className="border border-[#3b98df]" />
               <div className="flex justify-between gap-6">
                 <div className="">
-                  <span className="text-[14px] flex items-center gap-1">
-                    Savings Balance
-                  </span>
-                  <span className="font-[400] text-[20px] mt-1">
-                    {hideBalance
-                      ? "******"
-                      : formatCurrency(
-                          user.bank_details.saving_balance_usd ?? 0
-                        )}
-                  </span>{" "}
+                  <span className="text-[14px] flex items-center gap-1">Savings Balance</span>
+                  <span className="font-[400] text-[20px] mt-1">{hideBalance ? '******' : formatCurrency(user.bank_details.saving_balance_usd ?? 0)}</span>{' '}
                 </div>
                 <div className="flex flex-col gap-5">
-                  <Link
-                    href="/dashboard/transfer"
-                    className="p-[5px_20px] flex rounded-full bg-white text-[#117ACA] text-[14px]"
-                  >
+                  <Link href="/dashboard/transfer" className="p-[5px_20px] flex rounded-full bg-white text-[#117ACA] text-[14px]">
                     Send money
                   </Link>
                 </div>
@@ -130,32 +104,15 @@ export default function Dashboard() {
               <div className="flex items-center justify-between">
                 <span className="text-[14px] flex items-center gap-1">
                   Available balance
-                  {hideBalance ? (
-                    <FiEyeOff onClick={toggleShowBalance} />
-                  ) : (
-                    <FiEye onClick={toggleHideBalance} />
-                  )}
+                  {hideBalance ? <FiEyeOff onClick={toggleShowBalance} /> : <FiEye onClick={toggleHideBalance} />}
                 </span>
-                <Link
-                  href="/dashboard/transactions"
-                  className="text-[14px] flex items-center gap-1"
-                >
-                  <span>Transaction History</span>{" "}
-                  <IoIosArrowForward className="relative top-[2px]" />
+                <Link href="/dashboard/transactions" className="text-[14px] flex items-center gap-1">
+                  <span>Transaction History</span> <IoIosArrowForward className="relative top-[2px]" />
                 </Link>
               </div>
               <div className="flex items-center justify-between">
-                <span className="font-[400] text-[20px]">
-                  {hideBalance
-                    ? "******"
-                    : `${formatCurrency(
-                        user.bank_details.balance_usd
-                      )}`}
-                </span>
-                <Link
-                  href="/dashboard/transfer"
-                  className="p-[5px_20px] rounded-full bg-white text-[#117ACA] text-[14px]"
-                >
+                <span className="font-[400] text-[20px]">{hideBalance ? '******' : `${formatCurrency(user.bank_details.balance_usd)}`}</span>
+                <Link href="/dashboard/transfer" className="p-[5px_20px] rounded-full bg-white text-[#117ACA] text-[14px]">
                   Send money
                 </Link>
               </div>
@@ -164,22 +121,35 @@ export default function Dashboard() {
         </div>
         <div className="p-[16px] hidden border py-8">
           <div className="flex items-center justify-center gap-3">
-            <Link
-              href="/dashboard/cards"
-              className="border flex items-center gap-1 p-4 py-2 text-[13px] max-w-max bg-white text-[#117aca] rounded-full"
-            >
+            <Link href="/dashboard/cards" className="border flex items-center gap-1 p-4 py-2 text-[13px] max-w-max bg-white text-[#117aca] rounded-full">
               <CardIcon className="w-5 h-5" /> <span>Cards</span>
             </Link>
-            <Link
-              href="/dashboard/bill-payment"
-              className="border flex items-center gap-1 p-4 py-2 text-[13px] max-w-max bg-white text-[#117aca] rounded-full"
-            >
+            <Link href="/dashboard/bill-payment" className="border flex items-center gap-1 p-4 py-2 text-[13px] max-w-max bg-white text-[#117aca] rounded-full">
               <BillIcon className="w-5 h-5" />
               <span>Pay Bills</span>
             </Link>
           </div>
         </div>
         <TransactionHistory user={user} hideBalance={hideBalance} />
+
+        <div className="border flex flex-col gap-4 p-6 px-4">
+          <div className="border flex flex-col gap-4 bg-white overflow-hidden">
+            <Image src="https://i.imgur.com/3Px8cLU.jpeg" width={5000} height={5000} className="" alt="sjsusbnnsn" />
+
+            <div className="text-center text-black p-3 px-7 pb-7">
+              <span className="font-bold">Treasury Management</span> <br />
+              <span>Everything you need to handle cash flow efficiently.</span>
+            </div>
+          </div>
+          <div className="border flex flex-col gap-4 bg-white overflow-hidden">
+            <Image src="https://i.imgur.com/kDRLbf0.jpeg" width={5000} height={5000} className="" alt="sjsusbnnsn" />
+
+            <div className="text-center text-black p-3 px-7 pb-7">
+              <span className="font-bold">Association Banking</span> <br />
+              <span>Personalized, expert assistance for property managers.</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
